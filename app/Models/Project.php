@@ -15,7 +15,7 @@ class Project extends Model
 
     public function getImagePath()
     {
-        return asset('storage' . $this->image);
+        return asset('storage/' . $this->image);
     }
 
     public function type()
