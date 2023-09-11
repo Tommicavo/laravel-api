@@ -1,0 +1,52 @@
+.indexContent .indexButtons>*{
+    width: 40px;
+}
+
+.indexButtons button{
+    width: 100%;
+}
+
+.draggable{
+    cursor: move;
+}
+
+.draggable.dragging td{
+    opacity: 50%;
+    background-color: #dedede;
+}
+
+.fa-solid.fa-eye{
+    translate: -2px 0;
+}
+
+.toggleForm{
+    & .form-check, & .form-label{
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.headerLeft{
+    & .selectFilter{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    & .form-control, & .typeFilter{
+        border-radius: 0;
+    }
+
+    & .findBtn{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+.lockedBtn{
+    filter: grayscale(1);
+    pointer-events: none;
+}
+
+td .publishCheck{
+    translate: 40px 20px;
+}

@@ -1,0 +1,9 @@
+@use './guestsHome' as *;
+@use './adminHome' as *;
+
+@use './projects/index' as *;
+@use './projects/show' as *;
+
+@use './types/index' as *;
+
+@import '~bootstrap/scss/bootstrap';
