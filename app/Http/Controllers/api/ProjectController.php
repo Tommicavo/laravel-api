@@ -15,7 +15,7 @@ class ProjectController extends Controller
     {
         $projects = Project::where('is_published', true)
             ->with('technologies')->with('type')->with('author')
-            ->orderBy('order')->get();
+            ->orderBy('order')->paginate(5);
         foreach ($projects as $project) {
             if ($project->image) $project->image = url('storage/' . $project->image);
         }
@@ -25,9 +25,9 @@ class ProjectController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(string $id)
     {
-        //
+        // 
     }
 
     /**
@@ -35,7 +35,11 @@ class ProjectController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $project = Project::find($id);
+        if (!$project) return response(null, 404);
+        if ($project->image) $project->image = url('storage/' . $project->image);
+
+        return response()->json($project);
     }
 
     /**
