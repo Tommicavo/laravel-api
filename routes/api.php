@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\ProjectController;
+use App\Http\Controllers\Api\TypeProjectsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// HomePage
 Route::get('projects/', [ProjectController::class, 'index']);
+
+// Project Detail
 Route::get('projects/{project}', [ProjectController::class, 'show']);
+
+// Projects by Type
+Route::get('types/{type}/projects', [TypeProjectsController::class, 'index']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
